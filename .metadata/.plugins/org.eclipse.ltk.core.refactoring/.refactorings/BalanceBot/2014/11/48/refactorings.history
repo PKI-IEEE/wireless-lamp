@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Balance_Bot/src/blinky.c&apos; to &apos;main.c&apos;" description="Rename resource &apos;blinky.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/blinky.c" name="main.c" stamp="1416927649906" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Balance_Bot/src/Balance_Bot.h&apos; to &apos;BalanceBot.h&apos;" description="Rename resource &apos;Balance_Bot.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Balance_Bot.h" name="BalanceBot.h" stamp="1416927992079" updateReferences="true"/>
+</session>

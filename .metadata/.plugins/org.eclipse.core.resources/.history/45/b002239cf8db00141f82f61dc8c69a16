@@ -1,0 +1,83 @@
+#include "lamp.h"
+
+void setRed(uint8_t setValue) {
+	uint8_t ptr[1];
+	ptr[0] = setValue;
+	UARTSend(ptr,1);
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	LPC_TMR32B0->MR3 = (uint32_t)(dutyCycle);
+}
+
+void setGreen(uint8_t setValue) {
+	uint8_t *ptr = setValue;
+	UARTSend(ptr,1);
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	LPC_TMR32B1->MR0 = (uint32_t)(dutyCycle);
+}
+
+void setBlue(uint8_t setValue) {
+	uint8_t *ptr = setValue;
+	UARTSend(ptr,1);
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	LPC_TMR32B1->MR1 = (uint32_t)(dutyCycle);
+}
+
+void setWhite(uint8_t setValue) {
+	uint8_t *ptr = setValue;
+	UARTSend(ptr,1);
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	LPC_TMR32B1->MR2 = (uint32_t)(dutyCycle);
+}
+
+void setColor(uint8_t red, uint8_t green, uint8_t blue, uint8_t white) {
+	setRed(red);
+	setGreen(green);
+	setBlue(blue);
+	setWhite(white);
+}
+
+void testRed() {
+	uint8_t i;
+	for(i=0;i<255;i++) {
+		setRed(i);
+		delay_ms(50);
+	}
+	setRed(0);
+}
+
+void testGreen() {
+	uint8_t i;
+	for(i=0;i<255;i++) {
+		setGreen(i);
+		delay_ms(50);
+	}
+	setGreen(0);
+}
+
+void testBlue() {
+	uint8_t i;
+	for(i=0;i<255;i++) {
+		setBlue(i);
+		delay_ms(50);
+	}
+	setBlue(0);
+}
+
+void testWhite() {
+	uint8_t i;
+	for(i=0;i<255;i++) {
+		setWhite(i);
+		delay_ms(50);;
+	}
+	setWhite(0);
+}
+
+

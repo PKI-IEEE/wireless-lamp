@@ -1,0 +1,9 @@
+void setRed(uint8_t setValue);
+void setGreen(uint8_t setValue);
+void setBlue(uint8_t setValue);
+void setWhite(uint8_t setValue);
+void testRed();
+void testGreen();
+void testBlue();
+void testWhite();
+

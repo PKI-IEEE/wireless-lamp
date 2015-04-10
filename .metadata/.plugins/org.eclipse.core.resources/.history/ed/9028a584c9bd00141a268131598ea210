@@ -1,0 +1,188 @@
+#include "balance_bot.h"
+
+void fpgaWrite(uint16_t data) {
+	GPIOSetValue(3, 0, 0); // pull latch low
+	uint8_t highByte = (data & 0xFF00) >> 8;
+	uint8_t lowByte = data;
+
+	SPIWrite(highByte);
+	SPIWrite(lowByte);
+	GPIOSetValue(3,0,1); // latch high
+	delay_microseconds(0,50);
+	GPIOSetValue(3,0,0); // latch low
+
+}
+
+void addressSelect(uint16_t address) {
+	switch(address) {
+	case 0:
+		GPIOSetValue(2, 1, 0);
+		GPIOSetValue(2, 2, 0);
+		GPIOSetValue(2, 3, 0);
+		GPIOSetValue(2, 6, 0);
+		break;
+	case 1:
+		GPIOSetValue(2, 1, 1);
+		GPIOSetValue(2, 2, 0);
+		GPIOSetValue(2, 3, 0);
+		GPIOSetValue(2, 6, 0);
+		break;
+	case 2:
+		GPIOSetValue(2, 1, 0);
+		GPIOSetValue(2, 2, 1);
+		GPIOSetValue(2, 3, 0);
+		GPIOSetValue(2, 6, 0);
+		break;
+	case 3:
+		GPIOSetValue(2, 1, 1);
+		GPIOSetValue(2, 2, 1);
+		GPIOSetValue(2, 3, 0);
+		GPIOSetValue(2, 6, 0);
+		break;
+	case 4:
+		GPIOSetValue(2, 1, 0);
+		GPIOSetValue(2, 2, 0);
+		GPIOSetValue(2, 3, 1);
+		GPIOSetValue(2, 6, 0);
+		break;
+	case 5:
+		GPIOSetValue(2, 1, 1);
+		GPIOSetValue(2, 2, 0);
+		GPIOSetValue(2, 3, 1);
+		GPIOSetValue(2, 6, 0);
+		break;
+	case 6:
+		GPIOSetValue(2, 1, 0);
+		GPIOSetValue(2, 2, 1);
+		GPIOSetValue(2, 3, 1);
+		GPIOSetValue(2, 6, 0);
+		break;
+	case 7:
+		GPIOSetValue(2, 1, 1);
+		GPIOSetValue(2, 2, 1);
+		GPIOSetValue(2, 3, 1);
+		GPIOSetValue(2, 6, 0);
+		break;
+	case 8:
+		GPIOSetValue(2, 1, 0);
+		GPIOSetValue(2, 2, 0);
+		GPIOSetValue(2, 3, 0);
+		GPIOSetValue(2, 6, 1);
+		break;
+	case 9:
+		GPIOSetValue(2, 1, 1);
+		GPIOSetValue(2, 2, 0);
+		GPIOSetValue(2, 3, 0);
+		GPIOSetValue(2, 6, 1);
+		break;
+	case 10:
+		GPIOSetValue(2, 1, 0);
+		GPIOSetValue(2, 2, 1);
+		GPIOSetValue(2, 3, 0);
+		GPIOSetValue(2, 6, 1);
+		break;
+	case 11:
+		GPIOSetValue(2, 1, 1);
+		GPIOSetValue(2, 2, 1);
+		GPIOSetValue(2, 3, 0);
+		GPIOSetValue(2, 6, 1);
+		break;
+	case 12:
+		GPIOSetValue(2, 1, 0);
+		GPIOSetValue(2, 2, 0);
+		GPIOSetValue(2, 3, 1);
+		GPIOSetValue(2, 6, 1);
+		break;
+	case 13:
+		GPIOSetValue(2, 1, 1);
+		GPIOSetValue(2, 2, 0);
+		GPIOSetValue(2, 3, 1);
+		GPIOSetValue(2, 6, 1);
+		break;
+	case 14:
+		GPIOSetValue(2, 1, 0);
+		GPIOSetValue(2, 2, 1);
+		GPIOSetValue(2, 3, 1);
+		GPIOSetValue(2, 6, 1);
+		break;
+	case 15:
+		GPIOSetValue(2, 1, 1);
+		GPIOSetValue(2, 2, 1);
+		GPIOSetValue(2, 3, 1);
+		GPIOSetValue(2, 6, 1);
+		break;
+	}
+}
+
+void motorEnable(uint8_t motorNumber, uint8_t enable) {
+	switch(motorNumber) {
+	case 1:
+		addressSelect(9); // motor 1 enable address
+		fpgaWrite(enable); // enable active low
+		break;
+	case 3:
+		addressSelect(10); // motor 3 enable address
+		fpgaWrite(enable); // enable active low
+		break;
+	}
+}
+
+void setMotorDir(uint8_t motorNumber, uint16_t direction) {
+	switch(motorNumber) {
+	case 1:
+		addressSelect(11); // motor 1 direction address
+		fpgaWrite(direction); // write direction
+		break;
+	case 3:
+		addressSelect(12); // motor 3 direction address
+		fpgaWrite(direction); // write direction
+		break;
+	}
+}
+
+void setAcceleration(uint16_t accel) {
+	addressSelect(2); // acceleration address
+	fpgaWrite(accel);
+}
+
+void setMotorSpeed(uint8_t motorNumber, uint16_t speed) {
+	switch(motorNumber) {
+	case 1:
+		addressSelect(0); // motor 1 speed address
+		fpgaWrite(speed);
+		break;
+	case 3:
+		addressSelect(1); // motor 3 speed address
+		fpgaWrite(speed);
+		break;
+	}
+}
+
+void setMotorMicroStep(uint8_t motorNumber, uint16_t micoStep) {
+	switch(motorNumber) {
+	case 1:
+		addressSelect(13); // motor 1 micro step address
+		fpgaWrite(micoStep);
+		break;
+	case 3:
+		addressSelect(14); // motor 3 micro step address
+		fpgaWrite(micoStep);
+		break;
+	}
+}
+
+void motorInterfaceInit() {
+	GPIOSetDir(2, 1, 1); // address B0 as output
+	GPIOSetDir(2, 2, 1); // address B1 as output
+	GPIOSetDir(2, 3, 1); // address B2 as output
+	GPIOSetDir(2, 6, 1); // address B3 as output
+
+
+	GPIOSetDir(3, 0, 1); // FPGA latch as output
+
+	GPIOSetDir(1, 8, 0); // Accelerometer interrupt as input
+
+
+}
+
+

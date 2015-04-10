@@ -1,0 +1,182 @@
+// RGBW LED Lamp
+// Josh Hansen
+// PKI IEEE March 2015
+
+/*-------------------LAMP FUNCTION DESCRIPTIONS-------------------------------
+void setRed(uint8_t setValue);
+Sets the red LED. Takes uint8_t value from 0 to 255 which controls the
+brightness of the LED.
+Example use:
+	setRed(128) // sets red led to medium brightness
+
+void setGreen(uint8_t setValue);
+Sets the green LED. Takes uint8_t value from 0 to 255 which controls the
+brightness of the LED.
+Example use:
+	setGreen(128) // sets green led to medium brightness
+
+void setBlue(uint8_t setValue);
+Sets the blue LED. Takes uint8_t value from 0 to 255 which controls the
+brightness of the LED.
+Example use:
+	setBlue(128) // sets blue led to medium brightness
+
+void setWhite(uint8_t setValue);
+Sets the white LED. Takes uint8_t value from 0 to 255 which controls the
+brightness of the LED.
+Example use:
+	setWhite(128) // sets white led to medium brightness
+
+void setColor(uint8_t red, uint8_t green, uint8_t blue, uint8_t white);
+Sets all 4 LEDs at once. Can be used to blend the LED colors.
+Takes four uint8_t value from 0 to 255 which control the
+brightness of the LEDs.
+Example use:
+	setColor(255, 255, 0, 0); // sets lamp to produce yellow color at full brightness
+
+void testRed();
+Brings the red led from off to full brightness in about 13 seconds.
+	Example use:
+		testRed();
+
+void testGreen();
+Brings the green led from off to full brightness in about 13 seconds.
+	Example use:
+		testGreen();
+
+void testBlue();
+Brings the blue led from off to full brightness in about 13 seconds.
+	Example use:
+		testBlue();
+
+void testWhite();
+Brings the white led from off to full brightness in about 13 seconds.
+	Example use:
+		testWhite();
+
+void delay_us(uint32_t delay);
+Uses TMR16B0 to create a delay in us.
+	Example use:
+		delay_us(1000); // delays for 1000 us
+
+void delay_ms(uint32_t delay);
+Uses delay_us function in a loop to create delay in ms
+	Example use:
+		delay_ms(1000); // delays for 1 second
+
+
+ ---------------------------------------------------------------------------*/
+
+
+#include "lamp.h"
+__CRP const unsigned int CRP_WORD = CRP_NO_CRP ; // used for code protection
+
+void lampInit() {
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<7); // enable clock for CT16B0
+
+	// GPIO used to control ESP8266 lines
+	GPIOSetDir(3,3,1);
+	GPIOSetDir(3,2,1);
+	GPIOSetDir(3,1,1);
+	GPIOSetDir(3,0,1);
+
+	GPIOSetValue(3,3,1);
+	GPIOSetValue(3,2,1);
+	GPIOSetValue(3,1,1);
+	GPIOSetValue(3,0,1);
+/*
+	unsigned char setMode[] = "wifi.setmode(wifi.STATION)";
+	unsigned char staConfig[] = "wifi.sta.config(\"YOUR SSID\",\"NETWORK PASSWORD\")"; // enter your network SSID and password. Notice the escaped quotes SSID and password must be in quotes
+	unsigned char staConnect[] = "wifi.sta.connect()";
+	unsigned char CRLF[2];
+	CRLF[0] = 0x0D;
+	CRLF[1] = 0x0A;
+
+	UARTSend(setMode,sizeof(setMode)-1);
+	UARTSend(CRLF,2);
+	delay_us(100);
+	UARTSend(staConfig,sizeof(staConfig)-1);
+	UARTSend(CRLF,2);
+	delay_us(100);
+	UARTSend(staConnect,sizeof(staConnect)-1);
+	UARTSend(CRLF,2);
+	delay_us(100);
+	*/
+}
+
+
+void delay_us(uint32_t delay) {
+    LPC_TMR16B0->TCR = 0x02; // reset timer
+    LPC_TMR16B0->PR  = 72;
+    LPC_TMR16B0->MR0 = delay;
+    LPC_TMR16B0->IR  = 0xff; // reset interrupts
+    LPC_TMR16B0->MCR = 0x04; // stop timer on match
+    LPC_TMR16B0->TCR = 0x01; // start timer
+    while (LPC_TMR16B0->TCR & 0x01); // wait until timer finished
+}
+
+void delay_ms(uint32_t delay) {
+	uint32_t i;
+	for(i=0;i<delay;i++) {
+		delay_us(1000);
+	}
+}
+
+void PWMInit() { // Configures Timers for PWM
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<6); // enable AHB clock to GPIO
+
+	GPIOSetDir(0,11,1); // PIO0_11 as output
+	GPIOSetDir(1,1,1); // PIO1_1 as output
+	GPIOSetDir(1,2,1); // PIO1_1 as output
+
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<9); // enable clock for CT32B0 (32 bit timer 0)
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<10); // enable clock for CT32B1 (32 bit timer 1)
+
+	LPC_IOCON->R_PIO0_11 &= ~0x07; // (pg. 108)
+	LPC_IOCON->R_PIO0_11 |= 0x03; // Configure pin multiplexer for timer compare match
+
+	LPC_IOCON->R_PIO1_1 &= ~0x07;
+	LPC_IOCON->R_PIO1_1 |= 0x03; // Configure pin multiplexer for timer compare match
+
+	LPC_IOCON->R_PIO1_2 &= ~0x07;
+	LPC_IOCON->R_PIO1_2 |= 0x03; // Configure pin multiplexer for timer compare match
+
+	LPC_IOCON->SWDIO_PIO1_3 &= ~0x07;
+	LPC_IOCON->SWDIO_PIO1_3 |= 0x03; // Configure pin multiplexer for timer compare match
+
+	/*-----------------------------------------------Timer 0 PWM Config------------------------------------------------------------*/
+	LPC_TMR32B0->MCR = 0x02; // Reset on MR0: the TC will be reset if MR0 matches it. (pg. 287)
+	LPC_TMR32B0->MR0 = 144399; // 500 Hz PWM
+
+	LPC_TMR32B0->MR3 = 144400; // PWM OFF
+
+	LPC_TMR32B0->PWMC = 0x08; // PWM mode is enabled for CT32B0_MAT3 (pg. 293)
+	LPC_TMR32B0->TCR = 0x01; // Enable TMR32B0
+/*-----------------------------------------------Timer 1 PWM Config------------------------------------------------------------*/
+	LPC_TMR32B1->MCR = 0x0400;  // Reset on MR3: the TC will be reset if MR3 matches it. (pg. 287)
+	LPC_TMR32B1->MR3 = 144399; // 500 Hz PWM
+
+	LPC_TMR32B1->MR0 = 144400; // PWM OFF
+	LPC_TMR32B1->MR1 = 144400; // PWM OFF
+	LPC_TMR32B1->MR2 = 144400; // PWM OFF
+
+	LPC_TMR32B1->PWMC = 0x07; // PWM mode is enabled for CT32B1_MAT0, CT32B1_MAT1,CT32B1_MAT2 (pg. 293)
+	LPC_TMR32B1->TCR = 0x01; // Enable TMR32B0
+
+}
+
+int main (void) {
+	delay_ms(5000); // delay 5 seconds to let ESP8266 come up
+	UARTInit(9600);
+	lampInit();
+	PWMInit();
+
+  while (1) {
+
+	 testRed();
+	 testGreen();
+	 testBlue();
+	 testWhite();
+
+  }
+}

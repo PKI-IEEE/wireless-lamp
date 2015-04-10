@@ -1,0 +1,39 @@
+#include "balance_bot.h"
+
+
+unsigned char accelReadReg(unsigned char address) {
+	unsigned char temp;
+	I2C_Start();
+	I2C_Write(MPU6050_ADDRESS_WRITE);
+	I2C_Write(address);
+	I2C_Restart();
+	I2C_Write(MPU6050_ADDRESS_READ);
+	temp = I2C_Read();
+	I2C_Stop();
+	return temp;
+}
+
+void accelWriteReg(unsigned char reg, unsigned char data) {
+	I2C_Start();
+	I2C_Write(MPU6050_ADDRESS_WRITE);
+	I2C_Write(reg);
+	I2C_Write(data);
+	I2C_Stop();
+}
+
+void accelInit(void) {
+
+	accelWriteReg(MPU6050_RA_SMPLRT_DIV, 0x07); //Sample rate -8000/1+7 = 1000Hz
+	accelWriteReg(MPU6050_RA_CONFIG, 0x00); //Disable FSync, 256Hz DLPF
+	accelWriteReg(MPU6050_RA_GYRO_CONFIG, 0x08);//Disable gyro self tests, scale of 500 degrees/s
+	accelWriteReg(MPU6050_RA_ACCEL_CONFIG, 0x00); //Disable accel self tests, scale of +-2g, no DHPF //0x08
+	accelWriteReg(MPU6050_RA_MOT_THR, 0x00); // Disable motion threshold
+	accelWriteReg(MPU6050_RA_FIFO_EN, 0x00); // Disable FIFO buffer
+	accelWriteReg(MPU6050_RA_I2C_MST_CTRL, 0x00); //Sets AUX I2C to single master control
+	accelWriteReg(MPU6050_RA_PWR_MGMT_1, 0x00); // Sleep disable - internal 8Mhz clock source
+	accelWriteReg(MPU6050_RA_PWR_MGMT_2, 0x00); // All 6-axis out of standby mode
+}
+
+
+
+

@@ -1,0 +1,452 @@
+Archive member included because of file (symbol)
+
+C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+                              ./src/blinky.o (GPIOInit)
+C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+                              ./src/blinky.o (enable_timer16)
+C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+                              ./src/cr_startup_lpc13.o (SystemInit)
+c:/nxp/lpcxpresso_7.3.0_186/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+                              ./src/cr_startup_lpc13.o (__main)
+
+Discarded input sections
+
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/blinky.o
+ .text          0x00000000        0x0 ./src/blinky.o
+ .data          0x00000000        0x0 ./src/blinky.o
+ .bss           0x00000000        0x0 ./src/blinky.o
+ .group         0x00000000        0x8 ./src/cr_startup_lpc13.o
+ .group         0x00000000        0x8 ./src/cr_startup_lpc13.o
+ .group         0x00000000        0x8 ./src/cr_startup_lpc13.o
+ .group         0x00000000        0x8 ./src/cr_startup_lpc13.o
+ .text          0x00000000        0x0 ./src/cr_startup_lpc13.o
+ .data          0x00000000        0x0 ./src/cr_startup_lpc13.o
+ .bss           0x00000000        0x0 ./src/cr_startup_lpc13.o
+ .debug_macro   0x00000000       0x10 ./src/cr_startup_lpc13.o
+ .debug_macro   0x00000000      0x122 ./src/cr_startup_lpc13.o
+ .debug_macro   0x00000000      0x5b9 ./src/cr_startup_lpc13.o
+ .group         0x00000000        0x8 ./src/timer16_int.o
+ .group         0x00000000        0x8 ./src/timer16_int.o
+ .group         0x00000000        0x8 ./src/timer16_int.o
+ .group         0x00000000        0x8 ./src/timer16_int.o
+ .group         0x00000000        0x8 ./src/timer16_int.o
+ .group         0x00000000        0x8 ./src/timer16_int.o
+ .group         0x00000000        0x8 ./src/timer16_int.o
+ .group         0x00000000        0x8 ./src/timer16_int.o
+ .group         0x00000000        0x8 ./src/timer16_int.o
+ .text          0x00000000        0x0 ./src/timer16_int.o
+ .data          0x00000000        0x0 ./src/timer16_int.o
+ .debug_macro   0x00000000      0x856 ./src/timer16_int.o
+ .debug_macro   0x00000000       0x1c ./src/timer16_int.o
+ .debug_macro   0x00000000       0x2e ./src/timer16_int.o
+ .debug_macro   0x00000000       0x10 ./src/timer16_int.o
+ .debug_macro   0x00000000      0x122 ./src/timer16_int.o
+ .debug_macro   0x00000000      0x5b9 ./src/timer16_int.o
+ .debug_macro   0x00000000       0x18 ./src/timer16_int.o
+ .debug_macro   0x00000000      0x7af ./src/timer16_int.o
+ .debug_macro   0x00000000      0x131 ./src/timer16_int.o
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .text          0x00000000        0x0 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .data          0x00000000        0x0 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .bss           0x00000000        0x0 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .text.GPIOSetInterrupt
+                0x00000000      0x1ec C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .text.GPIOIntEnable
+                0x00000000       0x70 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .text.GPIOIntDisable
+                0x00000000       0x78 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .text.GPIOIntStatus
+                0x00000000       0x80 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .text.GPIOIntClear
+                0x00000000       0x70 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x00000000       0x1c C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x00000000       0x2e C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x00000000       0x10 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x00000000      0x122 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x00000000      0x5b9 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x00000000       0x18 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x00000000      0x7af C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x00000000      0x131 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x00000000       0x22 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .text          0x00000000        0x0 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .data          0x00000000        0x0 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .bss           0x00000000        0x0 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .text.delay_microseconds
+                0x00000000       0x98 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .text.disable_timer16
+                0x00000000       0x1c C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .text.reset_timer16
+                0x00000000       0x24 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_macro   0x00000000      0x856 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_macro   0x00000000       0x1c C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_macro   0x00000000       0x2e C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_macro   0x00000000       0x10 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_macro   0x00000000      0x122 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_macro   0x00000000      0x5b9 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_macro   0x00000000       0x18 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_macro   0x00000000      0x7af C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_macro   0x00000000      0x131 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .group         0x00000000        0x8 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .text          0x00000000        0x0 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .data          0x00000000        0x0 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .bss           0x00000000        0x0 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .text.SystemCoreClockUpdate
+                0x00000000       0xa0 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .rodata.CSWTCH.7
+                0x00000000       0x40 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .debug_macro   0x00000000       0x10 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .debug_macro   0x00000000      0x122 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .debug_macro   0x00000000      0x5b9 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .debug_macro   0x00000000       0x1c C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .debug_macro   0x00000000       0x2e C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .debug_macro   0x00000000       0x18 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .debug_macro   0x00000000      0x7af C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .debug_macro   0x00000000      0x131 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .text          0x00000000        0x0 c:/nxp/lpcxpresso_7.3.0_186/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+ .data          0x00000000        0x0 c:/nxp/lpcxpresso_7.3.0_186/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+ .bss           0x00000000        0x0 c:/nxp/lpcxpresso_7.3.0_186/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+MFlash32         0x00000000         0x00008000         xr
+RamLoc8          0x10000000         0x00002000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ./src/blinky.o
+LOAD ./src/cr_startup_lpc13.o
+LOAD ./src/timer16_int.o
+LOAD C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a
+LOAD C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a
+START GROUP
+LOAD c:/nxp/lpcxpresso_7.3.0_186/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a
+LOAD c:/nxp/lpcxpresso_7.3.0_186/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libcr_eabihelpers.a
+END GROUP
+                0x00008000                __top_MFlash32 = 0x8000
+                0x10002000                __top_RamLoc8 = 0x10002000
+
+.text           0x00000000      0x6e8
+ FILL mask 0xff
+                0x00000000                __vectors_start__ = ABSOLUTE (.)
+ *(.isr_vector)
+ .isr_vector    0x00000000      0x124 ./src/cr_startup_lpc13.o
+                0x00000000                g_pfnVectors
+                0x00000124                . = ALIGN (0x4)
+                0x00000124                __section_table_start = .
+                0x00000124                __data_section_table = .
+                0x00000124        0x4 LONG 0x6e8 LOADADDR (.data)
+                0x00000128        0x4 LONG 0x10000000 ADDR (.data)
+                0x0000012c        0x4 LONG 0x4 SIZEOF (.data)
+                0x00000130                __data_section_table_end = .
+                0x00000130                __bss_section_table = .
+                0x00000130        0x4 LONG 0x10000004 ADDR (.bss)
+                0x00000134        0x4 LONG 0x8 SIZEOF (.bss)
+                0x00000138                __bss_section_table_end = .
+                0x00000138                __section_table_end = .
+ *(.after_vectors*)
+ .after_vectors
+                0x00000138       0x78 ./src/cr_startup_lpc13.o
+                0x00000138                NMI_Handler
+                0x0000013a                HardFault_Handler
+                0x0000013c                MemManage_Handler
+                0x0000013e                BusFault_Handler
+                0x00000140                UsageFault_Handler
+                0x00000142                SVCall_Handler
+                0x00000144                DebugMon_Handler
+                0x00000146                PendSV_Handler
+                0x00000148                SysTick_Handler
+                0x0000014a                TIMER32_1_IRQHandler
+                0x0000014a                IntDefaultHandler
+                0x0000014a                TIMER32_0_IRQHandler
+                0x0000014a                UART_IRQHandler
+                0x0000014a                SSP_IRQHandler
+                0x0000014a                FMC_IRQHandler
+                0x0000014a                USB_FIQHandler
+                0x0000014a                ADC_IRQHandler
+                0x0000014a                PIOINT2_IRQHandler
+                0x0000014a                USB_IRQHandler
+                0x0000014a                BOD_IRQHandler
+                0x0000014a                WAKEUP_IRQHandler
+                0x0000014a                PIOINT0_IRQHandler
+                0x0000014a                I2C_IRQHandler
+                0x0000014a                PIOINT1_IRQHandler
+                0x0000014a                WDT_IRQHandler
+                0x0000014a                PIOINT3_IRQHandler
+                0x0000014c                data_init
+                0x0000015e                bss_init
+                0x0000016e                ResetISR
+                0x000002fc                . = 0x2fc
+ *fill*         0x000001b0      0x14c ff
+                0x000002fc                PROVIDE (__CRP_WORD_START__, .)
+ *(.crp)
+ .crp           0x000002fc        0x4 ./src/blinky.o
+                0x000002fc                CRP_WORD
+                0x00000300                PROVIDE (__CRP_WORD_END__, .)
+                0x00000001                ASSERT (! ((__CRP_WORD_START__ == __CRP_WORD_END__)), Linker CRP Enabled, but no CRP_WORD provided within application)
+ *(.text*)
+ .text.main     0x00000300       0x9c ./src/blinky.o
+                0x00000300                main
+ .text.TIMER16_0_IRQHandler
+                0x0000039c       0x28 ./src/timer16_int.o
+                0x0000039c                TIMER16_0_IRQHandler
+ .text.TIMER16_1_IRQHandler
+                0x000003c4       0x28 ./src/timer16_int.o
+                0x000003c4                TIMER16_1_IRQHandler
+ .text.GPIOInit
+                0x000003ec       0x34 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+                0x000003ec                GPIOInit
+ .text.GPIOSetDir
+                0x00000420       0xe8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+                0x00000420                GPIOSetDir
+ .text.GPIOSetValue
+                0x00000508       0x58 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+                0x00000508                GPIOSetValue
+ .text.enable_timer16
+                0x00000560       0x1c C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+                0x00000560                enable_timer16
+ .text.init_timer16
+                0x0000057c       0xbc C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+                0x0000057c                init_timer16
+ .text.SystemInit
+                0x00000638       0xac C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+                0x00000638                SystemInit
+ .text.__weak_main
+                0x000006e4        0x4 c:/nxp/lpcxpresso_7.3.0_186/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+                0x000006e4                __weak_main
+                0x000006e4                __main
+ *(.rodata .rodata.* .constdata .constdata.*)
+                0x000006e8                . = ALIGN (0x4)
+
+.glue_7         0x000006e8        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x000006e8        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x000006e8        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x000006e8        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x000006e8        0x0
+ .iplt          0x00000000        0x0 ./src/blinky.o
+
+.rel.dyn        0x000006e8        0x0
+ .rel.iplt      0x00000000        0x0 ./src/blinky.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x000006e8                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x000006e8                __exidx_end = .
+                0x000006e8                _etext = .
+
+.uninit_RESERVED
+                0x10000000        0x0
+ *(.bss.$RESERVED*)
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                _end_uninit_RESERVED = .
+
+.data           0x10000000        0x4 load address 0x000006e8
+ FILL mask 0xff
+                0x10000000                _data = .
+ *(vtable)
+ *(.ramfunc*)
+ *(.data*)
+ .data.SystemCoreClock
+                0x10000000        0x4 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+                0x10000000                SystemCoreClock
+                0x10000004                . = ALIGN (0x4)
+                0x10000004                _edata = .
+
+.igot.plt       0x10000004        0x0 load address 0x000006ec
+ .igot.plt      0x00000000        0x0 ./src/blinky.o
+
+.bss            0x10000004        0x8 load address 0x000006ec
+                0x10000004                _bss = .
+ *(.bss*)
+ .bss           0x10000004        0x8 ./src/timer16_int.o
+                0x10000004                timer16_0_counter
+                0x10000008                timer16_1_counter
+ *(COMMON)
+                0x1000000c                . = ALIGN (0x4)
+                0x1000000c                _ebss = .
+                0x1000000c                PROVIDE (end, .)
+
+.noinit         0x1000000c        0x0 load address 0x000006ec
+                0x1000000c                _noinit = .
+ *(.noinit*)
+                0x1000000c                . = ALIGN (0x4)
+                0x1000000c                _end_noinit = .
+                0x1000000c                PROVIDE (_pvHeapStart, .)
+                0x10002000                PROVIDE (_vStackTop, (__top_RamLoc8 - 0x0))
+OUTPUT(LPCX1343_cmsis2_blinky.axf elf32-littlearm)
+
+.debug_info     0x00000000     0x25c3
+ .debug_info    0x00000000      0x4bc ./src/blinky.o
+ .debug_info    0x000004bc      0x2c1 ./src/cr_startup_lpc13.o
+ .debug_info    0x0000077d      0x1fb ./src/timer16_int.o
+ .debug_info    0x00000978      0xab8 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_info    0x00001430      0xca1 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_info    0x000020d1      0x4f2 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+
+.debug_abbrev   0x00000000      0x826
+ .debug_abbrev  0x00000000       0xf5 ./src/blinky.o
+ .debug_abbrev  0x000000f5      0x12b ./src/cr_startup_lpc13.o
+ .debug_abbrev  0x00000220       0xcc ./src/timer16_int.o
+ .debug_abbrev  0x000002ec      0x233 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_abbrev  0x0000051f      0x1e7 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_abbrev  0x00000706      0x120 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+
+.debug_aranges  0x00000000      0x188
+ .debug_aranges
+                0x00000000       0x20 ./src/blinky.o
+ .debug_aranges
+                0x00000020       0x80 ./src/cr_startup_lpc13.o
+ .debug_aranges
+                0x000000a0       0x28 ./src/timer16_int.o
+ .debug_aranges
+                0x000000c8       0x58 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_aranges
+                0x00000120       0x40 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_aranges
+                0x00000160       0x28 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+
+.debug_ranges   0x00000000      0x128
+ .debug_ranges  0x00000000       0x10 ./src/blinky.o
+ .debug_ranges  0x00000010       0x70 ./src/cr_startup_lpc13.o
+ .debug_ranges  0x00000080       0x18 ./src/timer16_int.o
+ .debug_ranges  0x00000098       0x48 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_ranges  0x000000e0       0x30 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_ranges  0x00000110       0x18 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+
+.debug_macro    0x00000000     0x3667
+ .debug_macro   0x00000000       0xbb ./src/blinky.o
+ .debug_macro   0x000000bb      0x856 ./src/blinky.o
+ .debug_macro   0x00000911       0x1c ./src/blinky.o
+ .debug_macro   0x0000092d       0x2e ./src/blinky.o
+ .debug_macro   0x0000095b       0x10 ./src/blinky.o
+ .debug_macro   0x0000096b      0x122 ./src/blinky.o
+ .debug_macro   0x00000a8d      0x5b9 ./src/blinky.o
+ .debug_macro   0x00001046       0x18 ./src/blinky.o
+ .debug_macro   0x0000105e      0x7af ./src/blinky.o
+ .debug_macro   0x0000180d      0x131 ./src/blinky.o
+ .debug_macro   0x0000193e       0x34 ./src/blinky.o
+ .debug_macro   0x00001972       0x22 ./src/blinky.o
+ .debug_macro   0x00001994       0x82 ./src/blinky.o
+ .debug_macro   0x00001a16       0x34 ./src/blinky.o
+ .debug_macro   0x00001a4a       0x52 ./src/cr_startup_lpc13.o
+ .debug_macro   0x00001a9c      0x85c ./src/cr_startup_lpc13.o
+ .debug_macro   0x000022f8       0x7f ./src/timer16_int.o
+ .debug_macro   0x00002377       0x7e C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x000023f5      0x856 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_macro   0x00002c4b       0x7f C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_macro   0x00002cca      0x147 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .debug_macro   0x00002e11      0x856 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+
+.debug_line     0x00000000      0xcff
+ .debug_line    0x00000000      0x2ad ./src/blinky.o
+ .debug_line    0x000002ad      0x1aa ./src/cr_startup_lpc13.o
+ .debug_line    0x00000457      0x1f5 ./src/timer16_int.o
+ .debug_line    0x0000064c      0x2b4 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_line    0x00000900      0x235 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_line    0x00000b35      0x1ca C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+
+.debug_str      0x00000000     0x89bc
+ .debug_str     0x00000000     0x7a7a ./src/blinky.o
+                               0x7b00 (size before relaxing)
+ .debug_str     0x00007a7a      0x296 ./src/cr_startup_lpc13.o
+                               0x3d00 (size before relaxing)
+ .debug_str     0x00007d10       0x6b ./src/timer16_int.o
+                               0x725c (size before relaxing)
+ .debug_str     0x00007d7b      0x578 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+                               0x795a (size before relaxing)
+ .debug_str     0x000082f3      0x257 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+                               0x7b05 (size before relaxing)
+ .debug_str     0x0000854a      0x472 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+                               0x7835 (size before relaxing)
+
+.comment        0x00000000       0xe0
+ .comment       0x00000000       0x70 ./src/blinky.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 ./src/cr_startup_lpc13.o
+ .comment       0x00000000       0x71 ./src/timer16_int.o
+ .comment       0x00000000       0x71 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .comment       0x00000000       0x71 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .comment       0x00000000       0x71 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .comment       0x00000070       0x70 c:/nxp/lpcxpresso_7.3.0_186/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+                                 0x71 (size before relaxing)
+
+.ARM.attributes
+                0x00000000       0x33
+ .ARM.attributes
+                0x00000000       0x33 ./src/blinky.o
+ .ARM.attributes
+                0x00000033       0x33 ./src/cr_startup_lpc13.o
+ .ARM.attributes
+                0x00000066       0x33 ./src/timer16_int.o
+ .ARM.attributes
+                0x00000099       0x33 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .ARM.attributes
+                0x000000cc       0x33 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .ARM.attributes
+                0x000000ff       0x33 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+ .ARM.attributes
+                0x00000132       0x33 c:/nxp/lpcxpresso_7.3.0_186/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+
+.debug_frame    0x00000000      0x2a8
+ .debug_frame   0x00000000       0x2c ./src/blinky.o
+ .debug_frame   0x0000002c       0xf0 ./src/cr_startup_lpc13.o
+ .debug_frame   0x0000011c       0x40 ./src/timer16_int.o
+ .debug_frame   0x0000015c       0xb4 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_frame   0x00000210       0x68 C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_frame   0x00000278       0x30 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+
+.debug_loc      0x00000000      0xcce
+ .debug_loc     0x00000000      0x15f ./src/cr_startup_lpc13.o
+ .debug_loc     0x0000015f      0xa2f C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+ .debug_loc     0x00000b8e       0xbc C:\Users\Josh\Dropbox\Code\Balance_Bot\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(timer16.o)
+ .debug_loc     0x00000c4a       0x84 C:\Users\Josh\Dropbox\Code\Balance_Bot\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)

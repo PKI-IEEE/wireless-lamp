@@ -1,0 +1,2 @@
+#include "lamp.h"
+void wifiConnect();

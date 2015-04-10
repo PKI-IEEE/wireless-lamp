@@ -1,0 +1,142 @@
+// RGBW LED Lamp
+// Josh Hansen
+// PKI IEEE March 2015
+#include "lamp.h"
+__CRP const unsigned int CRP_WORD = CRP_NO_CRP ; // used for code protection
+
+void lampInit() {
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<7); // enable clock for timer160
+
+	GPIOSetDir(3,3,1);
+	GPIOSetDir(3,2,1);
+	GPIOSetDir(3,1,1);
+	GPIOSetDir(3,0,1);
+
+	GPIOSetValue(3,3,1);
+	GPIOSetValue(3,2,1);
+	GPIOSetValue(3,1,1);
+	GPIOSetValue(3,0,1);
+/*
+	unsigned char setMode[] = "wifi.setmode(wifi.STATION)";
+	unsigned char staConfig[] = "wifi.sta.config(\"Yep\",\"Jackmonkey8!\")"; // enter your network SSID and password. Notice the escaped quotes SSID and password must be in quotes
+	unsigned char staConnect[] = "wifi.sta.connect()";
+	unsigned char CRLF[2];
+	CRLF[0] = 0x0D;
+	CRLF[1] = 0x0A;
+
+	UARTSend(setMode,sizeof(setMode)-1);
+	UARTSend(CRLF,2);
+	delay_us(100);
+	UARTSend(staConfig,sizeof(staConfig)-1);
+	UARTSend(CRLF,2);
+	delay_us(100);
+	UARTSend(staConnect,sizeof(staConnect)-1);
+	UARTSend(CRLF,2);
+	delay_us(100);
+	*/
+}
+
+void delay_us(uint32_t delay) {
+    LPC_TMR16B0->TCR = 0x02; // reset timer
+    LPC_TMR16B0->PR  = 72;
+    LPC_TMR16B0->MR0 = delay;
+    LPC_TMR16B0->IR  = 0xff; // reset interrupts
+    LPC_TMR16B0->MCR = 0x04; // stop timer on match
+    LPC_TMR16B0->TCR = 0x01; // start timer
+    while (LPC_TMR16B0->TCR & 0x01); // wait until timer finished
+}
+
+void delay_ms(uint32_t delay) {
+	uint32_t i;
+	for(i=0;i<delay;i++) {
+		delay_us(1000);
+	}
+}
+
+void PWMInit() { // Configures Timers for PWM
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<6); // enable AHB clock to GPIO
+
+	GPIOSetDir(0,11,1); // PIO0_11 as output
+	GPIOSetDir(1,1,1); // PIO1_1 as output
+	GPIOSetDir(1,2,1); // PIO1_1 as output
+
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<9); // enable clock for CT32B0 (32 bit timer 0)
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<10); // enable clock for CT32B1 (32 bit timer 1)
+
+	LPC_IOCON->R_PIO0_11 &= ~0x07; // (pg. 108)
+	LPC_IOCON->R_PIO0_11 |= 0x03; // Configure pin multiplexer for timer compare match
+
+	LPC_IOCON->R_PIO1_1 &= ~0x07;
+	LPC_IOCON->R_PIO1_1 |= 0x03; // Configure pin multiplexer for timer compare match
+
+	LPC_IOCON->R_PIO1_2 &= ~0x07;
+	LPC_IOCON->R_PIO1_2 |= 0x03; // Configure pin multiplexer for timer compare match
+
+	LPC_IOCON->SWDIO_PIO1_3 &= ~0x07;
+	LPC_IOCON->SWDIO_PIO1_3 |= 0x03; // Configure pin multiplexer for timer compare match
+
+	/*-----------------------------------------------Timer 0 PWM Config------------------------------------------------------------*/
+	LPC_TMR32B0->MCR = 0x02; // Reset on MR0: the TC will be reset if MR0 matches it. (pg. 287)
+	LPC_TMR32B0->MR0 = 144399; // 500 Hz PWM
+
+	LPC_TMR32B0->MR3 = 144400; // PWM OFF
+
+	LPC_TMR32B0->PWMC = 0x08; // PWM mode is enabled for CT32B0_MAT3 (pg. 293)
+	LPC_TMR32B0->TCR = 0x01; // Enable TMR32B0
+/*-----------------------------------------------Timer 1 PWM Config------------------------------------------------------------*/
+	LPC_TMR32B1->MCR = 0x0400;  // Reset on MR3: the TC will be reset if MR3 matches it. (pg. 287)
+	LPC_TMR32B1->MR3 = 144399; // 500 Hz PWM
+
+	LPC_TMR32B1->MR0 = 144400; // PWM OFF
+	LPC_TMR32B1->MR1 = 144400; // PWM OFF
+	LPC_TMR32B1->MR2 = 144400; // PWM OFF
+
+	LPC_TMR32B1->PWMC = 0x07; // PWM mode is enabled for CT32B1_MAT0, CT32B1_MAT1,CT32B1_MAT2 (pg. 293)
+	LPC_TMR32B1->TCR = 0x01; // Enable TMR32B0
+
+}
+
+void updateColor(int8_t temp) {
+
+}
+
+int main (void) {
+	//UARTInit(9600);
+	lampInit();
+	PWMInit();
+
+
+  while (1) {
+	  	int i;
+	  	for(i=0;i<255;i++) {
+	  		setColor(255,i,0,0);
+	  		delay_ms(100);
+	  	}
+	  	setColor(0,0,0,0);
+		for(i=0;i<255;i++) {
+			setColor(i,255,0,0);
+			delay_ms(100);
+		}
+		setColor(0,0,0,0);
+		for(i=0;i<255;i++) {
+			setColor(0,255,i,0);
+			delay_ms(100);
+		}
+		setColor(0,0,0,0);
+		for(i=0;i<255;i++) {
+			setColor(i,0,255,0);
+			delay_ms(100);
+		}
+		setColor(0,0,0,0);
+
+
+
+
+
+	  //	testRed();
+	  //	testGreen();
+	  //	testBlue();
+	  //	testWhite();
+
+  }
+}
