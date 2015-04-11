@@ -29,7 +29,7 @@ all: Lamp.axf
 Lamp.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"C:\Users\Josh\Dropbox\Code\Lamp\CMSISv2p00_LPC13xx\Debug" -L"C:\Users\Josh\Dropbox\Code\Lamp\LPC13xx_cmsis2_Lib\Debug" -Xlinker -Map=Lamp.map -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "BalanceBot_Debug.ld" -o "Lamp.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"C:\Users\Josh\Dropbox\IEEE\Lamp\Lamp_Code\CMSISv2p00_LPC13xx\Debug" -L"C:\Users\Josh\Dropbox\IEEE\Lamp\Lamp_Code\LPC13xx_cmsis2_Lib\Debug" -Xlinker -Map=Lamp.map -Xlinker --gc-sections -mcpu=cortex-m3 -mthumb -T "Lamp_Debug.ld" -o "Lamp.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

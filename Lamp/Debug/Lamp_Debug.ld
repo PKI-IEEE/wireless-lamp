@@ -4,12 +4,12 @@
  * (c) NXP Semiconductors 2013-2015
  * Generated linker script file for LPC1343
  * Created from generic_c.ld (7.7.2 ())
- * By LPCXpresso v7.7.2 [Build 379] [2015-03-31]  on Fri Apr 10 15:33:21 CDT 2015
+ * By LPCXpresso v7.7.2 [Build 379] [2015-03-31]  on Sat Apr 11 11:48:49 CDT 2015
  */
 
 
-INCLUDE "BalanceBot_Debug_lib.ld"
-INCLUDE "BalanceBot_Debug_mem.ld"
+INCLUDE "Lamp_Debug_lib.ld"
+INCLUDE "Lamp_Debug_mem.ld"
 
 ENTRY(ResetISR)
 

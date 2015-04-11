@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>BalanceBot</name>
+	<name>Lamp</name>
 	<comment></comment>
 	<projects>
 		<project>CMSISv2p00_LPC13xx</project>
+		<project>LPC13xx_cmsis2_Lib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
