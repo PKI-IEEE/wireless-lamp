@@ -1,0 +1,3 @@
+
+void wifiConnect();
+struct ip getIp();

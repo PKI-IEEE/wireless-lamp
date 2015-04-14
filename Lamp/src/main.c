@@ -64,6 +64,12 @@ Uses delay_us function in a loop to create delay in ms
 	Example use:
 		delay_ms(1000); // delays for 1 second
 
+void colorWheel(uint32_t delay);
+Function written by Austin Steiner. Cycles gradually through the colors much like a color wheel.
+Takes a uint32_t value that specifies the delay between changing colors is ms (100 is a good starting value)
+Each call the the function cycles through the colors once. Best used in a loop.
+	Example use:
+		colorWheel(100);
 
  ---------------------------------------------------------------------------*/
 
@@ -110,7 +116,8 @@ void PWMInit() { // Configures Timers for PWM
 
 	GPIOSetDir(0,11,1); // PIO0_11 as output
 	GPIOSetDir(1,1,1); // PIO1_1 as output
-	GPIOSetDir(1,2,1); // PIO1_1 as output
+	GPIOSetDir(1,2,1); // PIO1_2 as output
+	GPIOSetDir(1,3,1); // PIO1_3 as output
 
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<9); // enable clock for CT32B0 (32 bit timer 0)
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<10); // enable clock for CT32B1 (32 bit timer 1)
@@ -154,12 +161,9 @@ int main (void) {
 	lampInit();
 	PWMInit();
 
-  while (1) {
 
-	 //testRed();
-	 //testGreen();
-	 //testBlue();
-	 //testWhite();
+  while (1) {
+	  colorWheel(100);
 
   }
 }

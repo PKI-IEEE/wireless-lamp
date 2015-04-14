@@ -1,0 +1,138 @@
+#include "lamp.h"
+
+void setRed(uint8_t setValue) {
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	PWM_R = (uint32_t)(dutyCycle);
+}
+
+void setGreen(uint8_t setValue) {
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	PWM_G = (uint32_t)(dutyCycle);
+}
+
+void setBlue(uint8_t setValue) {
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	PWM_B = (uint32_t)(dutyCycle);
+}
+
+void setWhite(uint8_t setValue) {
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	PWM_W = (uint32_t)(dutyCycle);
+}
+
+void setColor(uint8_t red, uint8_t green, uint8_t blue, uint8_t white) {
+	setRed(red);
+	setGreen(green);
+	setBlue(blue);
+	setWhite(white);
+}
+
+void testRed() {
+	uint8_t i;
+	for(i=0;i<255;i++) {
+		setRed(i);
+		delay_ms(50);
+	}
+	setRed(0);
+}
+
+void testGreen() {
+	uint8_t i;
+	for(i=0;i<255;i++) {
+		setGreen(i);
+		delay_ms(50);
+	}
+	setGreen(0);
+}
+
+void testBlue() {
+	uint8_t i;
+	for(i=0;i<255;i++) {
+		setBlue(i);
+		delay_ms(50);
+	}
+	setBlue(0);
+}
+
+void testWhite() {
+	uint8_t i;
+	for(i=0;i<255;i++) {
+		setWhite(i);
+		delay_ms(50);;
+	}
+	setWhite(0);
+}
+
+void blinkBlue() {
+	setBlue(50);
+	delay_ms(500);
+	setBlue(0);
+	delay_ms(500);
+}
+
+void blinkGreen() {
+	setGreen(50);
+	delay_ms(500);
+	setGreen(0);
+	delay_ms(500);
+}
+
+void blinkRed() {
+	setRed(50);
+	delay_ms(500);
+	setRed(0);
+	delay_ms(500);
+}
+
+void blinkWhite() {
+	setWhite(50);
+	delay_ms(500);
+	setWhite(0);
+	delay_ms(500);
+}
+
+void color_wheel() {
+	int c = 0;
+	while(c < 0x300) {
+		int r = 0;
+		int g = 0;
+		int b = 0;
+
+		if (c <= 0x100)
+		{
+			g = c;
+			r = 0x100 - c;
+		}
+		else if (c <= 0x200)
+		{
+			b = c - 0x100;
+			g = 0x200 - c;
+		}
+		else if (c <= 0x300)
+		{
+			r = c - 0x200;
+			b = 0x300 - c;
+		}
+		else
+			r = g = b = 0;
+
+		PWM_R = gamma_table[r];
+		PWM_G = gamma_table[g];
+		PWM_B = gamma_table[b];
+		PWM_W = 144400;
+
+		c+=5;
+		delay_ms(5);
+	}
+
+}
+
+

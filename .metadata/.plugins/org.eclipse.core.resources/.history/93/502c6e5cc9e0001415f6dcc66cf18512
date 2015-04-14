@@ -1,0 +1,45 @@
+#include "lamp.h"
+
+void wifiConnect() {
+	unsigned char setMode[] = "wifi.setmode(wifi.STATION)";
+	unsigned char staConfig[] = "wifi.sta.config(\"YOUR SSID\",\"NETWORK PASSWORD\")"; // enter your network SSID and password. Notice the escaped quotes. SSID and password must be in quotes
+	unsigned char staConnect[] = "wifi.sta.connect()";
+	unsigned char CRLF[2] = {0x0D, 0x0A};
+
+	UARTSend(setMode,sizeof(setMode)-1);
+	UARTSend(CRLF,2);
+	delay_us(100);
+	UARTSend(staConfig,sizeof(staConfig)-1);
+	UARTSend(CRLF,2);
+	delay_us(100);
+	UARTSend(staConnect,sizeof(staConnect)-1);
+	UARTSend(CRLF,2);
+	delay_us(100);
+}
+
+
+struct ip getIp() {
+	NVIC_DisableIRQ(UART_IRQn); // disable UART interrupt
+	uint8_t LSRValue;
+	uint8_t index = 0;
+	unsigned char buffer[50];
+	struct ip ipAddress;
+	unsigned char getIp[] = "wifi.sta.getip()";
+	unsigned char CRLF[2] = {0x0D, 0x0A};
+	UARTSend(getIp,sizeof(getIp)-1);
+	UARTSend(CRLF,2);
+	delay_ms(1000);
+	uint8_t i;
+	for(i=0;i<50;i++) {
+		LSRValue = LPC_UART->LSR;
+		if (LSRValue & 0x01)	{
+			buffer[index++] = LPC_UART->RBR;
+		}
+	}
+	UARTSend(buffer,50);
+
+
+	NVIC_EnableIRQ(UART_IRQn); // enable UART interrupt
+	return ipAddress;
+
+}

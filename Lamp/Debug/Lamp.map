@@ -82,6 +82,14 @@ Discarded input sections
                 0x00000000       0x28 ./src/led.o
  .text.testWhite
                 0x00000000       0x28 ./src/led.o
+ .text.blinkBlue
+                0x00000000       0x2c ./src/led.o
+ .text.blinkGreen
+                0x00000000       0x2c ./src/led.o
+ .text.blinkRed
+                0x00000000       0x2c ./src/led.o
+ .text.blinkWhite
+                0x00000000       0x2c ./src/led.o
  .text          0x00000000        0x0 ./src/main.o
  .data          0x00000000        0x0 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
@@ -92,10 +100,10 @@ Discarded input sections
  .data          0x00000000        0x0 ./src/wifi.o
  .bss           0x00000000        0x0 ./src/wifi.o
  .text.wifiConnect
-                0x00000000       0xc0 ./src/wifi.o
+                0x00000000       0xc8 ./src/wifi.o
  .rodata        0x00000000        0x2 ./src/wifi.o
  .rodata.str1.1
-                0x00000000       0x5e ./src/wifi.o
+                0x00000000       0x5b ./src/wifi.o
  .comment       0x00000000       0x71 ./src/wifi.o
  .ARM.attributes
                 0x00000000       0x33 ./src/wifi.o
@@ -486,7 +494,7 @@ END GROUP
                 0x00008000                __top_MFlash32 = 0x8000
                 0x10002000                __top_RamLoc8 = 0x10002000
 
-.text           0x00000000     0x1078
+.text           0x00000000     0x14f8
  FILL mask 0xff
                 0x00000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -495,7 +503,7 @@ END GROUP
                 0x00000124                . = ALIGN (0x4)
                 0x00000124                __section_table_start = .
                 0x00000124                __data_section_table = .
-                0x00000124        0x4 LONG 0x1078 LOADADDR (.data)
+                0x00000124        0x4 LONG 0x14f8 LOADADDR (.data)
                 0x00000128        0x4 LONG 0x10000000 ADDR (.data)
                 0x0000012c        0x4 LONG 0x8 SIZEOF (.data)
                 0x00000130                __data_section_table_end = .
@@ -556,98 +564,104 @@ END GROUP
  .text.setWhite
                 0x0000039c       0x34 ./src/led.o
                 0x0000039c                setWhite
+ .text.colorWheel
+                0x000003d0       0x70 ./src/led.o
+                0x000003d0                colorWheel
  .text.lampInit
-                0x000003d0       0x68 ./src/main.o
-                0x000003d0                lampInit
+                0x00000440       0x68 ./src/main.o
+                0x00000440                lampInit
  .text.delay_us
-                0x00000438       0x24 ./src/main.o
-                0x00000438                delay_us
+                0x000004a8       0x24 ./src/main.o
+                0x000004a8                delay_us
  .text.delay_ms
-                0x0000045c       0x18 ./src/main.o
-                0x0000045c                delay_ms
- .text.PWMInit  0x00000474       0xdc ./src/main.o
-                0x00000474                PWMInit
+                0x000004cc       0x18 ./src/main.o
+                0x000004cc                delay_ms
+ .text.PWMInit  0x000004e4       0xe4 ./src/main.o
+                0x000004e4                PWMInit
  .text.startup.main
-                0x00000550       0x1c ./src/main.o
-                0x00000550                main
+                0x000005c8       0x22 ./src/main.o
+                0x000005c8                main
+ *fill*         0x000005ea        0x2 
  .text.UART_IRQHandler
-                0x0000056c      0x1e8 ./src/uart.o
-                0x0000056c                UART_IRQHandler
+                0x000005ec      0x1e8 ./src/uart.o
+                0x000005ec                UART_IRQHandler
  .text.UARTInit
-                0x00000754       0xc8 ./src/uart.o
-                0x00000754                UARTInit
+                0x000007d4       0xc8 ./src/uart.o
+                0x000007d4                UARTInit
  .text.GPIOSetDir
-                0x0000081c       0xe0 C:\Users\Josh\Dropbox\IEEE\Lamp\Lamp_Code\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
-                0x0000081c                GPIOSetDir
+                0x0000089c       0xe0 C:\Users\Josh\Dropbox\IEEE\Lamp\Lamp_Code\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+                0x0000089c                GPIOSetDir
  .text.GPIOSetValue
-                0x000008fc       0x58 C:\Users\Josh\Dropbox\IEEE\Lamp\Lamp_Code\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
-                0x000008fc                GPIOSetValue
+                0x0000097c       0x58 C:\Users\Josh\Dropbox\IEEE\Lamp\Lamp_Code\LPC13xx_cmsis2_Lib\Debug\libLPC13xx_cmsis2_Lib.a(gpio.o)
+                0x0000097c                GPIOSetValue
  .text.SystemInit
-                0x00000954       0xac C:\Users\Josh\Dropbox\IEEE\Lamp\Lamp_Code\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
-                0x00000954                SystemInit
+                0x000009d4       0xac C:\Users\Josh\Dropbox\IEEE\Lamp\Lamp_Code\CMSISv2p00_LPC13xx\Debug\libCMSISv2p00_LPC13xx.a(system_LPC13xx.o)
+                0x000009d4                SystemInit
  .text.__weak_main
-                0x00000a00        0x4 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
-                0x00000a00                __weak_main
-                0x00000a00                __main
- .text.ch_val   0x00000a04       0x30 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(scanf.o)
+                0x00000a80        0x4 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(__weak__main.o)
+                0x00000a80                __weak_main
+                0x00000a80                __main
+ .text.ch_val   0x00000a84       0x30 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(scanf.o)
  .text._strtoul
-                0x00000a34       0xbc h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(scanf.o)
- .text.strtol   0x00000af0       0x78 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(scanf.o)
-                0x00000af0                strtol
- .text.atoi     0x00000b68       0x18 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(scanf.o)
-                0x00000b68                atoi
+                0x00000ab4       0xbc h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(scanf.o)
+ .text.strtol   0x00000b70       0x78 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(scanf.o)
+                0x00000b70                strtol
+ .text.atoi     0x00000be8       0x18 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(scanf.o)
+                0x00000be8                atoi
  .text.__bhs_ui2f.part.0
-                0x00000b80       0x20 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
+                0x00000c00       0x20 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
  .text.__aeabi_fmul
-                0x00000ba0       0xc0 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
-                0x00000ba0                __aeabi_fmul
+                0x00000c20       0xc0 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
+                0x00000c20                __aeabi_fmul
  .text.__aeabi_fdiv
-                0x00000c60       0xc0 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
-                0x00000c60                __aeabi_fdiv
+                0x00000ce0       0xc0 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
+                0x00000ce0                __aeabi_fdiv
  .text.__aeabi_fsub
-                0x00000d20       0xec h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
-                0x00000d20                __aeabi_fsub
+                0x00000da0       0xec h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
+                0x00000da0                __aeabi_fsub
  .text.__aeabi_fadd
-                0x00000e0c       0xb4 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
-                0x00000e0c                __aeabi_fadd
+                0x00000e8c       0xb4 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
+                0x00000e8c                __aeabi_fadd
  .text.__aeabi_f2uiz
-                0x00000ec0       0x28 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
-                0x00000ec0                __aeabi_f2uiz
+                0x00000f40       0x28 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
+                0x00000f40                __aeabi_f2uiz
  .text.__aeabi_ui2f
-                0x00000ee8       0x10 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
-                0x00000ee8                __aeabi_ui2f
+                0x00000f68       0x10 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(float.o)
+                0x00000f68                __aeabi_ui2f
  *(.rodata .rodata.* .constdata .constdata.*)
+ .rodata        0x00000f78      0x400 ./src/led.o
+                0x00000f78                gamma_table
  .rodata.__ctype
-                0x00000ef8      0x180 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(ctype.o)
-                0x00000ef8                __ctype
-                0x00001078                . = ALIGN (0x4)
+                0x00001378      0x180 h:/lpcxpresso_7.7.2_379/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(ctype.o)
+                0x00001378                __ctype
+                0x000014f8                . = ALIGN (0x4)
 
-.glue_7         0x00001078        0x0
+.glue_7         0x000014f8        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x00001078        0x0
+.glue_7t        0x000014f8        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x00001078        0x0
+.vfp11_veneer   0x000014f8        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00001078        0x0
+.v4_bx          0x000014f8        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00001078        0x0
+.iplt           0x000014f8        0x0
  .iplt          0x00000000        0x0 ./src/cr_startup_lpc13.o
 
-.rel.dyn        0x00001078        0x0
+.rel.dyn        0x000014f8        0x0
  .rel.iplt      0x00000000        0x0 ./src/cr_startup_lpc13.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00001078                __exidx_start = .
+                0x000014f8                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00001078                __exidx_end = .
-                0x00001078                _etext = .
+                0x000014f8                __exidx_end = .
+                0x000014f8                _etext = .
 
 .uninit_RESERVED
                 0x10000000        0x0
@@ -655,7 +669,7 @@ END GROUP
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _end_uninit_RESERVED = .
 
-.data           0x10000000        0x8 load address 0x00001078
+.data           0x10000000        0x8 load address 0x000014f8
  FILL mask 0xff
                 0x10000000                _data = .
  *(vtable)
@@ -670,10 +684,10 @@ END GROUP
                 0x10000008                . = ALIGN (0x4)
                 0x10000008                _edata = .
 
-.igot.plt       0x10000008        0x0 load address 0x00001080
+.igot.plt       0x10000008        0x0 load address 0x00001500
  .igot.plt      0x00000000        0x0 ./src/cr_startup_lpc13.o
 
-.bss            0x10000008       0x28 load address 0x00001080
+.bss            0x10000008       0x28 load address 0x00001500
                 0x10000008                _bss = .
  *(.bss*)
  .bss           0x10000008        0x8 ./src/uart.o
@@ -693,7 +707,7 @@ END GROUP
                 0x10000030                _ebss = .
                 0x10000030                PROVIDE (end, .)
 
-.noinit         0x10000030        0x0 load address 0x00001080
+.noinit         0x10000030        0x0 load address 0x00001500
                 0x10000030                _noinit = .
  *(.noinit*)
                 0x10000030                . = ALIGN (0x4)
