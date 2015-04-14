@@ -121,27 +121,31 @@ void blinkWhite() {
 void colorWheel(uint32_t delay) {
 	int c = 0;
 	while(c < 0x300) {
+
+
 		int r = 0;
 		int g = 0;
 		int b = 0;
 
-		if (c <= 0x100)
-		{
-			g = c;
-			r = 0x100 - c;
-		}
-		else if (c <= 0x200)
-		{
-			b = c - 0x100;
-			g = 0x200 - c;
-		}
-		else if (c <= 0x300)
-		{
-			r = c - 0x200;
-			b = 0x300 - c;
-		}
-		else
-			r = g = b = 0;
+		if (c < 0x100)
+			{
+				g = c;
+				r = 0xFF - c;
+			}
+			else if (c < 0x200)
+			{
+				b = c - 0x100;
+				g = 0x1FF - c;
+			}
+			else if (c < 0x300)
+			{
+				r = c - 0x200;
+				b = 0x2FF - c;
+			}
+			else
+			{
+				r = g = b = 0xFF;
+			}
 
 		PWM_R = gamma_table[r];
 		PWM_G = gamma_table[g];
