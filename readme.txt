@@ -62,3 +62,10 @@ void delay_ms(uint32_t delay);
 Uses delay_us function in a loop to create delay in ms
 	Example use:
 		delay_ms(1000); // delays for 1 second
+
+void colorWheel(uint32_t delay);
+Function written by Austin Steiner. Cycles gradually through the colors much like a color wheel.
+Takes a uint32_t value that specifies the delay between changing colors is ms (100 is a good starting value)
+Each call the the function cycles through the colors once. Best used in a loop.
+	Example use:
+		colorWheel(100);
