@@ -166,7 +166,7 @@ int main (void) {
 
 
   while (1) {
-	  //colorWheel(110);
+	  colorWheel(100);
 
   }
 }

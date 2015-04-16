@@ -160,13 +160,10 @@ int main (void) {
 	UARTInit(9600);
 	lampInit();
 	PWMInit();
-	//wifiConnect();
-	//delay_ms(5000);
-	//blinkIp(getIp());
 
 
   while (1) {
-	  //colorWheel(110);
+	  colorWheel(100);
 
   }
 }

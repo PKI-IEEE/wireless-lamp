@@ -4,7 +4,7 @@
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="com.crt.advproject.GCCBuildCommandParser">
 				<language id="org.eclipse.cdt.core.gcc">
-					<resource project-relative-path="src/main.c">
+					<resource project-relative-path="src/wifi.c">
 						<entry kind="includePath" name="/LPC13xx_cmsis2_Lib/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -25,7 +25,7 @@
 						<entry kind="macro" name="__REDLIB__" value=""/>
 						<entry kind="macro" name="__USE_CMSIS" value="CMSISv2p00_LPC13xx"/>
 					</resource>
-					<resource project-relative-path="src/wifi.c">
+					<resource project-relative-path="src/main.c">
 						<entry kind="includePath" name="/LPC13xx_cmsis2_Lib/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>

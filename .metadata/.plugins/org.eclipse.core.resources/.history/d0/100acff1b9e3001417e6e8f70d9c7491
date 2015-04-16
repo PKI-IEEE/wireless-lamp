@@ -20,43 +20,31 @@ const int gamma_table[256] = {
 0x0436E, 	0x03F13, 	0x03AB3, 	0x0364D, 	0x031E3, 	0x02D74, 	0x028FF, 	0x02485, 	0x02007, 	0x01B83, 	0x016FA, 	0x0126C, 	0x00DD8, 	0x00940, 	0x004A3, 	0x00000 };
 
 void setRed(uint8_t setValue) {
-	if(setValue < 0) {
-		setValue = 0;
-	}
-	if(setValue > 255) {
-		setValue = 255;
-	}
-	PWM_R = gamma_table[setValue];
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	PWM_R = (uint32_t)(dutyCycle);
 }
 
 void setGreen(uint8_t setValue) {
-	if(setValue < 0) {
-		setValue = 0;
-	}
-	if(setValue > 255) {
-		setValue = 255;
-	}
-	PWM_G = gamma_table[setValue];
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	PWM_G = (uint32_t)(dutyCycle);
 }
 
 void setBlue(uint8_t setValue) {
-	if(setValue < 0) {
-		setValue = 0;
-	}
-	if(setValue > 255) {
-		setValue = 255;
-	}
-	PWM_B = gamma_table[setValue];
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	PWM_B = (uint32_t)(dutyCycle);
 }
 
 void setWhite(uint8_t setValue) {
-	if(setValue < 0) {
-		setValue = 0;
-	}
-	if(setValue > 255) {
-		setValue = 255;
-	}
-	PWM_W = gamma_table[setValue];
+	float set = (float)setValue;
+	float brightness = 1-(set / 255);
+	float dutyCycle = 144400 * brightness;
+	PWM_W = (uint32_t)(dutyCycle);
 }
 
 void setColor(uint8_t red, uint8_t green, uint8_t blue, uint8_t white) {
