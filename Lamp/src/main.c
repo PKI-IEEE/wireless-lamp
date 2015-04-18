@@ -71,6 +71,36 @@ Each call the the function cycles through the colors once. Best used in a loop.
 	Example use:
 		colorWheel(100);
 
+
+void wifiConnect();
+Sends UART command to EPS8266 running nodeMCU firmware to connect to a WiFi network.
+Before calling this function ensure that you update the staConfig string in the function
+to include your SSID and password.
+	Example use:
+		wifiConnect(); // causes ESP8266 to connect to Wifi network in station mode
+
+struct ipStc getIp();
+Returns a structure containing the four integer parts of the ESP8266s current IP address
+
+void blinkIp(struct ipStc ipAddress);
+This function takes an ipStc structure containing the current ESP8266s IP address and then
+blinks the LEDs in a manner that will let the user know this IP address:
+
+Blink Red = 100
+Blink Blue = 10
+Blink Green = 1
+Blink white = dot (.)
+Blink purple = end of IP
+
+Example blink pattern:
+
+Blue - White - Green Green Green - White - Red Blue Green Green - White - Blue Blue Green - Purple
+
+This IP would be : 10.3.(100+10+2).(10+10+1) = 10.3.112.21
+
+Example Use:
+	blinkIp(getIp()); // blinks the leds to show the IP address using structure returned by getIp() function
+
  ---------------------------------------------------------------------------*/
 
 
@@ -160,13 +190,9 @@ int main (void) {
 	UARTInit(9600);
 	lampInit();
 	PWMInit();
-	//wifiConnect();
-	//delay_ms(5000);
-	//blinkIp(getIp());
-
 
   while (1) {
-	  //colorWheel(110);
+
 
   }
 }
